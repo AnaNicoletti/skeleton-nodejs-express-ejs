@@ -8,4 +8,14 @@ router.get('/', async function(req, res, next) {
   res.json(autores.rows);
 });
 
+router.get('/inserir', async function(req, res, next) {
+  let autor = {
+    nome:"Ana",
+    sobrenome:"Nicoletti",
+    datanascimento:"2002-12-12"
+  };
+  const autores = await Autor.inserir(autor);
+  res.json(autores.rows);
+});
+
 module.exports = router;
