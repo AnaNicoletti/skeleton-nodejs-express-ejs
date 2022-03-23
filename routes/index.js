@@ -9,12 +9,7 @@ router.get('/', async function(req, res, next) {
 });
 
 router.post('/inserir', async function(req, res, next) {
-  let autor = {
-    nome:"Ana",
-    sobrenome:"Nicoletti",
-    datanascimento:"2002-12-12"
-  };
-  const autores = await Autor.inserir(autor);
+  const autores = await Autor.inserir(req.body);
   res.json(autores.rows);
 });
 
