@@ -18,8 +18,8 @@ router.put('/atualizar', async function(req, res, next) {
   res.json(autores.rows);
 });
 
-router.get('/deletar', async function(req, res, next) {
-  const autores = await Autor.deletar(6);
+router.delete('/deletar', async function(req, res, next) {
+  const autores = await Autor.deletar(req.body.id);
   res.json(autores.rows);
 });
 
