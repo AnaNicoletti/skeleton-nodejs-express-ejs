@@ -28,4 +28,9 @@ router.get('/atualizar', async function(req, res, next) {
   res.json(autores.rows);
 });
 
+router.get('/deletar', async function(req, res, next) {
+  const autores = await Autor.deletar(6);
+  res.json(autores.rows);
+});
+
 module.exports = router;
