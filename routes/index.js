@@ -13,13 +13,8 @@ router.post('/inserir', async function(req, res, next) {
   res.json(autores.rows);
 });
 
-router.get('/atualizar', async function(req, res, next) {
-  let autor = {
-    nome:"Ana",
-    sobrenome:"Nicoletti",
-    datanascimento:"2002-09-11"
-  };
-  const autores = await Autor.atualizar(autor, 6);
+router.put('/atualizar', async function(req, res, next) {
+  const autores = await Autor.atualizar(req.body);
   res.json(autores.rows);
 });
 
