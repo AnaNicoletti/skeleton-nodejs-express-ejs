@@ -29,4 +29,9 @@ router.get('/livros', async function(req, res, next) {
   res.json(livros.rows);
 });
 
+router.post('/inserirlivros', async function(req, res, next) {
+  const livros = await Livro.inserir_livro(req.body);
+  res.json(livros.rows);
+});
+
 module.exports = router;
