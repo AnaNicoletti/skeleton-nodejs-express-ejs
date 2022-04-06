@@ -19,5 +19,11 @@ class Livro {
     const values = [data.nome, data.autor, data.editora, data.datapublicacao, data.preco, data.id]
     return await connect.query(sql, values);
   }
+
+  static async deletar_livro(id){
+    const connect = await db.connect();
+    const sql = "delete from livros where id = $1";
+    return await connect.query(sql, [id]);
+  }
 }
 module.exports = Livro;
