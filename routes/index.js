@@ -25,6 +25,12 @@ router.delete('/deletar', async function(req, res, next) {
 });
 
 //livros
+
+router.get('/livros_', async function(req, res, next) {
+  const autores = await Autor.livros_(req.query.autor);
+  res.json(autores.rows);
+}) ;
+
 router.get('/livros', async function(req, res, next) {
   const livros = await Livro.selecionar_livro();
   res.json(livros.rows);

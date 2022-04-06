@@ -25,5 +25,11 @@ class Autor {
     const sql = "delete from autores where id = $1";
     return await connect.query(sql, [id]);
   }
+
+  static async livros_(id){
+    const connect = await db.connect();
+    const sql = "select * from livros where autor = $1";
+    return await connect.query(sql, [id])
+  }
 }
 module.exports = Autor;
