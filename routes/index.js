@@ -24,6 +24,7 @@ router.delete('/deletar', async function(req, res, next) {
   res.json(autores.rows);
 });
 
+//livros
 router.get('/livros', async function(req, res, next) {
   const livros = await Livro.selecionar_livro();
   res.json(livros.rows);
@@ -31,6 +32,11 @@ router.get('/livros', async function(req, res, next) {
 
 router.post('/inserirlivros', async function(req, res, next) {
   const livros = await Livro.inserir_livro(req.body);
+  res.json(livros.rows);
+});
+
+router.put('/atualizarlivros', async function(req, res, next) {
+  const livros = await Livro.atualizar_livro(req.body);
   res.json(livros.rows);
 });
 
