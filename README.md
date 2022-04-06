@@ -1,2 +1,2 @@
 # Skeleton NodeJS + ExpressJS
-Repositório base para projetos NodeJS + ExpressJS
+Dupla: Aline Victoria Alves de Souza e Ana Carolina Nicoletti.
